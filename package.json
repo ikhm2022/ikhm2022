@@ -1,0 +1,25 @@
+{
+  "name": "tpl_ikhm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easywocn/tpl_ikhm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/easywocn/tpl_ikhm/issues"
+  },
+  "homepage": "https://github.com/easywocn/tpl_ikhm#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "download": "^8.0.0",
+    "node-fetch": "^2.6.1"
+  }
+}
