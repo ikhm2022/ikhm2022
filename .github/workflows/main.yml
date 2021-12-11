@@ -1,0 +1,41 @@
+name: main
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #  - cron: "0 0 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      TZ: Asia/Shanghai
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: npm install
+        run: |
+          npm install
+      - name: node exec...
+        run: |
+          node index
+      - name: git pull
+        run: |
+          git config --local user.email "ikhm2022@outlook.com"
+          git config --local user.name "ikhm2022"
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git pull --rebase
+      - name: git add
+        run: |
+          git add .
+      - name: git commit
+        run: |
+          (git commit -m "update by github action") || true
+      - name: git push
+        run: |
+          git push
