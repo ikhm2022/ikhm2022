@@ -29,7 +29,7 @@ jobs:
           git config --local user.email "ikhm2022@outlook.com"
           git config --local user.name "ikhm2022"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git pull --rebase
+          git pull
       - name: git add
         run: |
           git add .
